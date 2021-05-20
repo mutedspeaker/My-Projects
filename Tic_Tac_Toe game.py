@@ -1,3 +1,4 @@
+# This function is for entering the character of the player according to the number he chose for it.
 def con(num):
     if num == 1:
         return 0, 0
@@ -22,6 +23,7 @@ def con(num):
         con(nu)
 
 
+# This, as you can see asks the player if he wants to play the game or not.
 def play():
     a = input("Player 1 do you wanna play Y/n? \n")
     if a.lower() == 'y' or a.lower() == 'yes':
@@ -29,6 +31,7 @@ def play():
         user_input(arr, b, c)
 
 
+# WHen the game ends, if the players wanna go again then this one comes into play, in hindsight I feel it should have been named "Rematch".
 def replay():
     a = input("Player 1 do you wanna replay Y/n? \n")
     if a.lower() in ['y', 'yes']:
@@ -37,6 +40,7 @@ def replay():
         user_input(arr, b, c)
 
 
+# Hehe nice argument name. This one shows the current position of the board.
 def display(bozo):
     for i in bozo:
         d = ''
@@ -46,6 +50,7 @@ def display(bozo):
         print(d)
 
 
+# This is what decides if the user won or they lost or well surprisingly drew, my bet is you'd lose with me ;).
 def win(dust):
     for i in dust:
         if i[0] == i[1] and i[0] == i[2]:
@@ -65,6 +70,7 @@ def win(dust):
         return dust
 
 
+# This one takes in the user input and the current board to put in the symbol. 
 def user_input(game_board, first_symbol, second_symbol):
     d = 1
     for i in range(9):
@@ -102,12 +108,23 @@ def user_input(game_board, first_symbol, second_symbol):
         replay()
 
 
+# This generates the board
 arr = [[i+3*j+1 for i in range(3)] for j in range(3)]
 for i in range(3):
     for j in range(3):
         arr[i][j] = str(arr[i][j])
+        
+# This welcomes you to the game, bet you didn't know that, ha!
 print('Welcome to the Tic Tac Toe game!')
+
+# This is for an empty line.
 print('')
+
+# This displays the board.
 display(arr)
+
+# Another empty line.
 print('')
+
+# Boom the game is afoot.
 play()
