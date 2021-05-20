@@ -1,4 +1,5 @@
 # This function is for entering the character of the player according to the number he chose for it.
+# A number from 1 - 9 and if you enter anything else it just loops on till eternity unless you give it what it wants.
 def con(num):
     if num == 1:
         return 0, 0
