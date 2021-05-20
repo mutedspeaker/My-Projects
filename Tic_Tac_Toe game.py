@@ -37,8 +37,8 @@ def replay():
     a = input("Player 1 do you wanna replay Y/n? \n")
     if a.lower() in ['y', 'yes']:
         b, c = "O", "X"
-        arr = [[i + 3 * j + 1 for i in range(3)] for j in range(3)]
-        user_input(arr, b, c)
+        ar = [[i + 3 * j + 1 for i in range(3)] for j in range(3)]
+        user_input(ar, b, c)
 
 
 # Hehe nice argument name. This one shows the current position of the board.
@@ -46,7 +46,7 @@ def display(bozo):
     for i in bozo:
         d = ''
         for j in i:
-            d += str(j)+'|'
+            d += str(j) + '|'
         d = d[:len(d) - 1]
         print(d)
 
@@ -82,11 +82,11 @@ def user_input(game_board, first_symbol, second_symbol):
             if d % 2 != 0:
                 h = con(num)
                 game_board[h[0]][h[1]] = first_symbol
-                print('\n'*3)
+                print('\n' * 3)
                 display(game_board)
                 earth = win(game_board)
                 if earth == 't':
-                    print('\n'*3)
+                    print('\n' * 3)
                     print('Player 1 won')
                     replay()
                     break
@@ -94,7 +94,7 @@ def user_input(game_board, first_symbol, second_symbol):
             else:
                 h = con(num)
                 game_board[h[0]][h[1]] = second_symbol
-                print('\n'*3)
+                print('\n' * 3)
                 display(game_board)
                 earth = win(game_board)
                 if earth == 't':
@@ -110,11 +110,12 @@ def user_input(game_board, first_symbol, second_symbol):
 
 
 # This generates the board
-arr = [[i+3*j+1 for i in range(3)] for j in range(3)]
+# List comprehension it is
+arr = [[i + 3 * j + 1 for i in range(3)] for j in range(3)]
 for i in range(3):
     for j in range(3):
         arr[i][j] = str(arr[i][j])
-        
+
 # This welcomes you to the game, bet you didn't know that, ha!
 print('Welcome to the Tic Tac Toe game!')
 
