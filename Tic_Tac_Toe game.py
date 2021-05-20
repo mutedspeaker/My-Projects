@@ -111,6 +111,9 @@ def user_input(game_board, first_symbol, second_symbol):
 
 # This generates the board
 # List comprehension it is
+# Also we convert into str, you know why?
+# That's a puzzle for you
+# Let's see if you're that smart
 arr = [[i + 3 * j + 1 for i in range(3)] for j in range(3)]
 for i in range(3):
     for j in range(3):
